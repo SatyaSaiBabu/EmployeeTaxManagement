@@ -19,15 +19,6 @@ public class EmployeeController {
     @Autowired
     private EmployeeTaxCalculation employeeTaxCalculation;
 
-   /* @RequestHeader(value = "Id") Long id, @RequestHeader(value = "FirstName") String firstname,
-    @RequestHeader(value = "LastName") String lastName, @RequestHeader(value = "Email") String email,
-    @RequestHeader(value = "PhoneNumber") String contact, @RequestHeader(value = "DateOfJoining") Date doj,
-    @RequestHeader(value = "Salary") Double salary*/
-    /*(@RequestBody Long id,  String firstname,
-    String lastName,String email,
-    String contact,  Date doj,
-    Double salary){*/
-
     @PostMapping("/saveEmployeeDetails")
     public EmployeeResponse saveRecords(@RequestBody EmployeeRequest employeeRequest){
         EmployeeResponse employeeResponse =employeeService.storingEmployeeData(Long.valueOf(employeeRequest.getId()),employeeRequest.getFirstName(),employeeRequest.getLastName(),employeeRequest.getEmail(),employeeRequest.getContactNumber(),employeeRequest.getDateOfJoining(),employeeRequest.getSalary());
